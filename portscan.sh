@@ -20,6 +20,6 @@ do
 #  echo "nmap would have scanned $rec_column1 for the client $rec_column2" >> $Outpath/scan.dmp
   nmap -Pn -p "$Ports" "$rec_column1" > $Outpath/scan.dmp
   ScanPositive=$(cat $Outpath/scan.dmp | grep open | awk '{print $1}')
-  if [ -z $ScanPositive ] ; then echo "$rec_column1 ($rec_column2) open port: $ScanPositive" >> $Outpath/$Output ; fi
+  if [ ! -z $ScanPositive ] ; then echo "$rec_column1 ($rec_column2) open port: $ScanPositive" >> $Outpath/$Output ; fi
 done < <(tail -n +2 $InputFile)
 #done < $InputFile
