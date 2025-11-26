@@ -27,4 +27,4 @@ do
 	fi
 done < <(tail -n +2 $InputFile)
 
-rm $Outpath/scan.dmp
+rm $Outpath/scan.dmp &>/dev/null
