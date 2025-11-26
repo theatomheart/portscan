@@ -15,6 +15,7 @@ mkdir -p $Outpath
 echo "Scanning for open ports: $Ports."
 PrintPorts="${Ports:2}"
 echo "# Portscan looking for ports $PrintPorts" > $Outpath/$Output
+echo "" >> $Outpath/$Output
 
 while IFS="," read -r rec_column1 rec_column2
 do
